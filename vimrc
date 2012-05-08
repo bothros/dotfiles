@@ -25,3 +25,9 @@ let g:solarized_termcolors=16
 let g:solarized_termtrans=1      " fixes background in terminal
 set background=dark
 colorscheme solarized
+
+"" indent-guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=red ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
