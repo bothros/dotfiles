@@ -1,4 +1,6 @@
 URxvt.background:   #002b36
+URxvt.borderColor:  #002b36
+URxvt.tintColor:    #002b36
 URxvt.foreground:   #657b83
 URxvt.cursorColor:  #93a1a1
 URxvt.pointerColor: #93a1a1
@@ -20,7 +22,7 @@ URxvt.color7:       #eee8d5
 URxvt.color15:      #fdf6e3
 
 URxvt.font:         xft:Inconsolata:size=14:anti-alias=true
-/*URxvt.letterSpace:  -4*/
 
 URxvt.scrollBar:    false
-                                                                                
+URxvt.secondaryScroll: true
+URxvt.urgentOnBell: true

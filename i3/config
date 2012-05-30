@@ -11,6 +11,19 @@
 
 set $mod Mod4
 
+# Set background color base03
+client.background #002b36
+
+# Set other colors
+# class                   border  backgr. text    indicator
+# client.focused            #586e75 #073642 #93a1a1 #002b36
+client.focused            #586e75 #073642 #93a1a1 #002b36
+# client.focused_inactive   #073642 #002b36 #839496 #002b36
+client.focused_inactive   #073642 #073642 #93a1a1 #002b36
+# client.unfocused          #002b36 #002b36 #586e75 #002b36
+client.unfocused          #073642 #073642 #586e75 #002b36
+client.urgent             #6c71c4 #859900 #586e75 #002b36
+
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
