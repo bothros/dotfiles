@@ -26,6 +26,9 @@ let g:solarized_termtrans=1      " fixes background in terminal
 set background=dark
 colorscheme solarized
 
+"" Python tabs
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
 "" indent-guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
