@@ -6,6 +6,7 @@ filetype plugin indent on        " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                       " don't wrap lines
+" set tw=80                        " hard wrap lines at 80 chars
 set tabstop=2 shiftwidth=2       " a tab is two spaces
 set expandtab                   " use spaces not tabs
 set backspace=indent,eol,start   " backspace through everything in insert mode
