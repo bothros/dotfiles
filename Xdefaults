@@ -21,7 +21,7 @@ URxvt.color14:      #93a1a1
 URxvt.color7:       #eee8d5
 URxvt.color15:      #fdf6e3
 
-URxvt.font:         xft:Inconsolata:size=14:anti-alias=true
+URxvt.font:         xft:Inconsolata:size=12:anti-alias=true
 
 URxvt.scrollBar:    false
 URxvt.secondaryScroll: true
