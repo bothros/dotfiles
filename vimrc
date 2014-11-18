@@ -1,11 +1,13 @@
+""""""""""""""""""
+" Vundle section "
+""""""""""""""""""
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -20,7 +22,9 @@ Plugin 'plasticboy/vim-markdown'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" My stuff starts here
+""""""""""""""""""""""""
+" My stuff starts here "
+""""""""""""""""""""""""
 
 set background=light
 
@@ -29,6 +33,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Put .swp files in /tmp, rather than in the working directory.
 set directory=~/tmp//,.,/var/tmp//,/tmp//
 
 " make .md follow highlight as markdown
