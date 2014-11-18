@@ -1,40 +1,42 @@
-set nocompatible                 " choose no compatibility with legacy vim
-syntax enable
-set encoding=utf-8
-set showcmd                      " display incomplete commands
-filetype plugin indent on        " load file type plugins + indentation
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"" Whitespace
-set nowrap                       " don't wrap lines
-" set tw=80                        " hard wrap lines at 80 chars
-set tabstop=2 shiftwidth=2       " a tab is two spaces
-set expandtab                   " use spaces not tabs
-set backspace=indent,eol,start   " backspace through everything in insert mode
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-"" Searching
-set hlsearch                     " highlight matches
-set incsearch                    " incremental searching
-set ignorecase                   " searches are case insensitive...
-set smartcase                    " ... unless they contain at least one capital letter
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-"" Plugins
-call pathogen#infect()           " start up pathogen
-call pathogen#helptags()         " ditto
+" Plugins go here:
+Plugin 'vim-voom/VOoM'
+Plugin 'tyru/open-browser.vim'
+Plugin 'bothros/vim-solitaire'
+Plugin 'plasticboy/vim-markdown'
 
-"" Solarized
-let g:solarized_termcolors=16
-let g:solarized_termtrans=1      " fixes background in terminal
-set background=dark
-colorscheme solarized
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-"" Python tabs
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
+" My stuff starts here
 
-"" Markdown hard wrap
-autocmd FileType markdown setlocal textwidth=80
+set background=light
 
-"" indent-guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#073642 ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#002b36 ctermbg=8
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set directory=~/tmp//,.,/var/tmp//,/tmp//
+
+" make .md follow highlight as markdown
+syntax on
+filetype on
+au BufNewFile,BufRead *.md set filetype=markdown
+
+" make gx use tyru/open-browser
+let g:netrw_nogx=1 " disable netrw's gx mapping
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
