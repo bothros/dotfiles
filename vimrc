@@ -41,6 +41,15 @@ syntax on
 filetype on
 au BufNewFile,BufRead *.md set filetype=markdown
 
+" set default browser for tyru/open-browser
+" x-www-browser first for ubuntu, then uzbl-browser for arch
+let g:openbrowser_browser_commands = [
+\   {'name': 'x-www-browser',
+\    'args': ['{browser}', '{uri}']},
+\   {'name': 'uzbl-browser',
+\    'args': ['{browser}', '{uri}']},
+\]
+
 " make gx use tyru/open-browser
 let g:netrw_nogx=1 " disable netrw's gx mapping
 nmap gx <Plug>(openbrowser-smart-search)
