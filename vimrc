@@ -16,6 +16,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-voom/VOoM'
 Plugin 'tyru/open-browser.vim'
 Plugin 'bothros/vim-solitaire'
+" Plugin '/home/adams/vim-TODO/.git'
+Plugin 'bothros/vim-TODO'
+Plugin 'tpope/vim-commentary'
 Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
@@ -54,3 +57,6 @@ let g:openbrowser_browser_commands = [
 let g:netrw_nogx=1 " disable netrw's gx mapping
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" Add // as a json comment prefix
+autocmd FileType json set commentstring=//\ %s
