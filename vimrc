@@ -1,3 +1,8 @@
+" If I'm using fish, vim plugins should use sh
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 """"""""""""""""""
 " Vundle section "
 """"""""""""""""""
@@ -25,6 +30,7 @@ Plugin 'ingydotnet/yaml-vim'
 Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'dag/vim-fish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
