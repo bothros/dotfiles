@@ -20,6 +20,11 @@ Plugin 'bothros/vim-solitaire'
 Plugin 'bothros/vim-TODO'
 Plugin 'tpope/vim-commentary'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'ingydotnet/yaml-vim'
+Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'jonathanfilip/vim-lucius'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -29,7 +34,9 @@ filetype plugin indent on    " required
 " My stuff starts here "
 """"""""""""""""""""""""
 
-set background=light
+set t_Co=256
+colorscheme lucius
+LuciusWhite
 
 set smartindent
 set tabstop=4
