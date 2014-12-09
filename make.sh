@@ -1,3 +1,5 @@
+#!/bin/sh
+
 dir=~/dotfiles
 olddir=~/dotfiles_old
 files="vimrc"
