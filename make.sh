@@ -27,13 +27,7 @@ else
     echo "...done"
 fi
 
-echo "getting here"
-
 fishpath="$(command -v fish)"
-echo "getting in between"
-echo "$fishpath"
-
-echo "getting there"
 
 if [ -z "$fishpath" ]; then
     echo "Fish not installed. Run again once you install fish, if you want fish config."
