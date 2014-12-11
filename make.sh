@@ -27,8 +27,13 @@ else
     echo "...done"
 fi
 
-fishpath= "`command -v fish`"
-echo $fishpath
+echo "getting here"
+
+fishpath="$(command -v fish)"
+echo "getting in between"
+echo "$fishpath"
+
+echo "getting there"
 
 if [ -z "$fishpath" ]; then
     echo "Fish not installed. Run again once you install fish, if you want fish config."
@@ -39,15 +44,17 @@ else
         echo "No oh-my-fish directory found, installing oh-my-fish"
         curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
         echo "...done"
-
-        echo "Creating symlink to config.fish in $HOME/.config/fish/"
-        ln -s $dir/config.fish ~/.confing/fish/config.fish
-        echo "...done"
-
-        echo "Creating symlink to ls.fish in $HOME/.config/fish/functions"
-        ln -s $dir/ls.fish ~/.confing/fish/functions/ls.fish
-        echo "...done"
     fi
+
+    echo "Creating symlink to config.fish in $HOME/.config/fish/"
+    mv ~/.config/fish/config.fish $olddir
+    ln -s $dir/config.fish ~/.config/fish/config.fish
+    echo "...done"
+
+    echo "Creating symlink to ls.fish in $HOME/.config/fish/functions"
+    mv ~/.config/fish/functions/ls.fish $olddir
+    ln -s $dir/ls.fish ~/.config/fish/functions/ls.fish
+    echo "...done"
 fi
 
 echo
