@@ -2,7 +2,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="vimrc"
+files="dir_colors vimrc"
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
@@ -25,6 +25,29 @@ else
     echo "No Vundle directory found, cloning to $HOME/.vim/bundle/Vundle.vim"
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     echo "...done"
+fi
+
+fishpath= "`command -v fish`"
+echo $fishpath
+
+if [ -z "$fishpath" ]; then
+    echo "Fish not installed. Run again once you install fish, if you want fish config."
+else
+    if [ -d "$HOME/.oh-my-fish" ]; then
+        echo "Existing oh-my-fish directory found at $HOME/.oh-my-fish"
+    else
+        echo "No oh-my-fish directory found, installing oh-my-fish"
+        curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
+        echo "...done"
+
+        echo "Creating symlink to config.fish in $HOME/.config/fish/"
+        ln -s $dir/config.fish ~/.confing/fish/config.fish
+        echo "...done"
+
+        echo "Creating symlink to ls.fish in $HOME/.config/fish/functions"
+        ln -s $dir/ls.fish ~/.confing/fish/functions/ls.fish
+        echo "...done"
+    fi
 fi
 
 echo
