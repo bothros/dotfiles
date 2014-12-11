@@ -52,6 +52,7 @@ else
     echo "...done"
 
     echo "Creating symlink to ls.fish in $HOME/.config/fish/functions"
+    mkdir -p ~/.config/fish/functions/
     mv ~/.config/fish/functions/ls.fish $olddir
     ln -s $dir/ls.fish ~/.config/fish/functions/ls.fish
     echo "...done"
