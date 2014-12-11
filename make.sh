@@ -43,7 +43,7 @@ else
     echo "Creating symlink to config.fish in $HOME/.config/fish/"
     mv ~/.config/fish/config.fish $olddir
     if [ "$1" = "notheme" ]; then
-        ln -s $dir/config.fish ~/.config/fish/config.fish.notheme
+        ln -s $dir/config.fish.notheme ~/.config/fish/config.fish
     else
         ln -s $dir/config.fish ~/.config/fish/config.fish
     fi
