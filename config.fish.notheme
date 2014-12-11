@@ -2,10 +2,10 @@
 set fish_path $HOME/.oh-my-fish
 
 # Theme
-set fish_theme bobthefish
+#set fish_theme bobthefish
 
-set -g theme_display_ruby no
-set -g theme_display_user yes
+#set -g theme_display_ruby no
+#set -g theme_display_user yes
 
 # Highlighting colors
 set -U fish_color_command    00875f
