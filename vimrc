@@ -24,12 +24,13 @@ Plugin 'bothros/vim-solitaire'
 " Plugin '/home/adams/vim-TODO/.git'
 Plugin 'bothros/vim-TODO'
 Plugin 'tpope/vim-commentary'
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'ingydotnet/yaml-vim'
 Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
-Plugin 'jonathanfilip/vim-lucius'
+" Plugin 'jonathanfilip/vim-lucius'
+Plugin 'jnurmine/zenburn'
 Plugin 'dag/vim-fish'
 
 " All of your Plugins must be added before the following line
@@ -41,8 +42,9 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""
 
 set t_Co=256
-colorscheme lucius
-LuciusWhite
+colorscheme zenburn
+"colorscheme lucius
+"LuciusLight
 
 set smartindent
 set tabstop=4
