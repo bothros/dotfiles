@@ -6,6 +6,7 @@ set fish_path $HOME/.oh-my-fish
 set fish_theme bobthefish
 
 set -g theme_display_ruby no
+set -g theme_display_user yes
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
