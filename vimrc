@@ -32,6 +32,9 @@ Plugin 'cespare/vim-toml'
 " Plugin 'jonathanfilip/vim-lucius'
 Plugin 'jnurmine/zenburn'
 Plugin 'dag/vim-fish'
+Plugin 'Matt-Deacalion/vim-systemd-syntax'
+Plugin 'vim-perl/vim-perl'
+Plugin 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +48,8 @@ set t_Co=256
 colorscheme zenburn
 "colorscheme lucius
 "LuciusLight
+
+set pastetoggle=<F10>
 
 set smartindent
 set tabstop=4
