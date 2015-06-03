@@ -1,8 +1,3 @@
-" If I'm using fish, vim plugins should use sh
-if &shell =~# 'fish$'
-    set shell=sh
-endif
-
 """"""""""""""""""
 " Vundle section "
 """"""""""""""""""
@@ -69,7 +64,7 @@ au BufNewFile,BufRead *.md set filetype=markdown
 let g:openbrowser_browser_commands = [
 \   {'name': 'x-www-browser',
 \    'args': ['{browser}', '{uri}']},
-\   {'name': 'uzbl-browser',
+\   {'name': 'chromium',
 \    'args': ['{browser}', '{uri}']},
 \]
 
