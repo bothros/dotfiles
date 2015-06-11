@@ -30,6 +30,7 @@ Plugin 'dag/vim-fish'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'vim-perl/vim-perl'
 Plugin 'godlygeek/tabular'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,3 +76,5 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s
+
+autocmd FileType markdown :Voom pandoc
