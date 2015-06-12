@@ -61,11 +61,13 @@ filetype on
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " set default browser for tyru/open-browser
-" x-www-browser first for ubuntu, then uzbl-browser for arch
+" x-www-browser first for gnome, then chromium.
 let g:openbrowser_browser_commands = [
 \   {'name': 'x-www-browser',
 \    'args': ['{browser}', '{uri}']},
 \   {'name': 'chromium',
+\    'args': ['{browser}', '{uri}']},
+\   {'name': 'w3m',
 \    'args': ['{browser}', '{uri}']},
 \]
 
@@ -77,4 +79,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s
 
+" Open Voom automatically when upon opening a markdown file.
+" TOFIX: need to press enter twice for voom to work right. Not sure why.
 autocmd FileType markdown :Voom pandoc
