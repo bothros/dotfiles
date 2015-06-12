@@ -26,11 +26,12 @@ Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
 " Plugin 'jonathanfilip/vim-lucius'
 Plugin 'jnurmine/zenburn'
-Plugin 'dag/vim-fish'
+" Plugin 'dag/vim-fish'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'vim-perl/vim-perl'
 Plugin 'godlygeek/tabular'
 Plugin 'elzr/vim-json'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,6 +76,16 @@ let g:openbrowser_browser_commands = [
 let g:netrw_nogx=1 " disable netrw's gx mapping
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" Recommended syntastic settings
+set statusline+=%#warningsmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s

@@ -29,5 +29,8 @@ fi
 
 echo
 echo "Finished."
+echo
 echo "You'll probably need to open up vim and run ':PluginInstall'"
+echo "If you want Syntastic to do you any good, you'll need to install some"
+echo "checkers for it. I use flake8, for python."
 echo
