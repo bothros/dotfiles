@@ -32,6 +32,8 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'godlygeek/tabular'
 Plugin 'elzr/vim-json'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time, 
+                              " ]l and [l in unimpaired
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
