@@ -27,35 +27,6 @@ else
     echo "...done"
 fi
 
-fishpath="$(command -v fish)"
-
-if [ -z "$fishpath" ]; then
-    echo "Fish not installed. Run again once you install fish, if you want fish config."
-else
-    if [ -d "$HOME/.oh-my-fish" ]; then
-        echo "Existing oh-my-fish directory found at $HOME/.oh-my-fish"
-    else
-        echo "No oh-my-fish directory found, installing oh-my-fish"
-        curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
-        echo "...done"
-    fi
-
-    echo "Creating symlink to config.fish in $HOME/.config/fish/"
-    mv ~/.config/fish/config.fish $olddir
-    if [ "$1" = "notheme" ]; then
-        ln -s $dir/config.fish.notheme ~/.config/fish/config.fish
-    else
-        ln -s $dir/config.fish ~/.config/fish/config.fish
-    fi
-    echo "...done"
-
-    echo "Creating symlink to ls.fish in $HOME/.config/fish/functions"
-    mkdir -p ~/.config/fish/functions/
-    mv ~/.config/fish/functions/ls.fish $olddir
-    ln -s $dir/ls.fish ~/.config/fish/functions/ls.fish
-    echo "...done"
-fi
-
 echo
 echo "Finished."
 echo "You'll probably need to open up vim and run ':PluginInstall'"
