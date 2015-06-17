@@ -34,6 +34,9 @@ Plugin 'elzr/vim-json'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time, 
                               " ]l and [l in unimpaired
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,7 +64,7 @@ set directory=~/tmp//,.,/var/tmp//,/tmp//
 " make .md follow highlight as markdown
 syntax on
 filetype on
-au BufNewFile,BufRead *.md set filetype=markdown
+" au BufNewFile,BufRead *.md set filetype=markdown
 
 " set default browser for tyru/open-browser
 " x-www-browser first for gnome, then chromium.
@@ -89,9 +92,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Run pandoc on write, for pandoc-markdown
+let g:pandoc#command#autoexec_on_writes = 1
+let g:pandoc#command#autoexec_command = "Pandoc"
+
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s
 
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
-autocmd FileType markdown :Voom pandoc
+autocmd FileType pandoc :Voom pandoc
