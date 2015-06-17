@@ -37,6 +37,7 @@ Plugin 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time,
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'hynek/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
