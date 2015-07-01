@@ -32,6 +32,7 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'godlygeek/tabular'
 Plugin 'elzr/vim-json'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time, 
                               " ]l and [l in unimpaired
 Plugin 'vim-pandoc/vim-pandoc'
@@ -99,6 +100,11 @@ let g:pandoc#command#autoexec_command = "Pandoc"
 
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s
+
+" Make # work right, even with smartindent. From :help smartindent
+inoremap # X#
+
+set modeline
 
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
