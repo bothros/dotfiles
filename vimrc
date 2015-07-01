@@ -104,7 +104,13 @@ autocmd FileType json set commentstring=//\ %s
 " Make # work right, even with smartindent. From :help smartindent
 inoremap # X#
 
+" Set modeline, so you can specify filetyle in comments
 set modeline
+
+" Control-J splits a line, doing roughly the opposite of Shift-J.
+" This is useful for PEP8.
+" TODO: make it delete trailing spaces
+nnoremap <C-J> i<CR><Esc>k$
 
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
