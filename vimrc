@@ -45,6 +45,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim', { 'build': {'linux': 'make'}}
 NeoBundle 'dbakker/vim-projectroot'
 NeoBundle 'jeetsukumaran/vim-indentwise'
+NeoBundle 'sbl/scvim'
 
 " All of your Plugins must be added before the following line
 call neobundle#end()            " required
@@ -122,7 +123,9 @@ nnoremap <C-J> i<CR><Esc>k$
 
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
-autocmd FileType pandoc :Voom pandoc
+if ! &diff
+    autocmd FileType pandoc :Voom pandoc
+endif
 
 " Unite.vim stuff
 function! Unite_ctrlp()
@@ -139,3 +142,5 @@ nnoremap <space>/ :call Unite_grep()<cr>
 
 let g:unite_source_history_yank_enable = 1
 nnoremap <space>y :Unite history/yank<cr>
+
+let g:sclangTerm = "urxvt -e $SHELL -ic"
