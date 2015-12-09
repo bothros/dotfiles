@@ -1,48 +1,56 @@
 """"""""""""""""""
-" Vundle section "
+" NeoBundle section "
 """"""""""""""""""
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Let NeoBundle manage NeoBundle
+" required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins go here:
-Plugin 'vim-voom/VOoM'
-Plugin 'tyru/open-browser.vim'
-Plugin 'bothros/vim-solitaire'
-" Plugin '/home/adams/vim-TODO/.git'
-Plugin 'bothros/vim-TODO'
-Plugin 'tpope/vim-commentary'
-" Plugin 'plasticboy/vim-markdown'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'ingydotnet/yaml-vim'
-Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
-" Plugin 'jonathanfilip/vim-lucius'
-Plugin 'jnurmine/zenburn'
-" Plugin 'dag/vim-fish'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
-Plugin 'vim-perl/vim-perl'
-Plugin 'godlygeek/tabular'
-Plugin 'elzr/vim-json'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time, 
+NeoBundle 'vim-voom/VOoM'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'bothros/vim-solitaire'
+" NeoBundle '/home/adams/vim-TODO/.git'
+NeoBundle 'bothros/vim-TODO'
+NeoBundle 'tpope/vim-commentary'
+" NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'PotatoesMaster/i3-vim-syntax'
+NeoBundle 'ingydotnet/yaml-vim'
+NeoBundle 'wting/rust.vim'
+NeoBundle 'cespare/vim-toml'
+" NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'jnurmine/zenburn'
+" NeoBundle 'dag/vim-fish'
+NeoBundle 'Matt-Deacalion/vim-systemd-syntax'
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'elzr/vim-json'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time, 
                               " ]l and [l in unimpaired
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'hynek/vim-python-pep8-indent'
+NeoBundle 'vim-pandoc/vim-pandoc'
+NeoBundle 'vim-pandoc/vim-pandoc-syntax'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'hynek/vim-python-pep8-indent'
+" NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'tmhedberg/SimpylFold'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', { 'build': {'linux': 'make'}}
+NeoBundle 'dbakker/vim-projectroot'
+NeoBundle 'jeetsukumaran/vim-indentwise'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call neobundle#end()            " required
 filetype plugin indent on    " required
+
+NeoBundleCheck
 
 """"""""""""""""""""""""
 " My stuff starts here "
@@ -115,3 +123,19 @@ nnoremap <C-J> i<CR><Esc>k$
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
 autocmd FileType pandoc :Voom pandoc
+
+" Unite.vim stuff
+function! Unite_ctrlp()
+    execute ':Unite  -buffer-name=files -start-insert buffer file_rec/async:'.ProjectRootGuess().'/'
+endfunction
+
+nnoremap <space><space> :call Unite_ctrlp()<cr>
+
+function! Unite_grep()
+    execute ':Unite grep:'.ProjectRootGuess().'/'
+endfunction
+
+nnoremap <space>/ :call Unite_grep()<cr>
+
+let g:unite_source_history_yank_enable = 1
+nnoremap <space>y :Unite history/yank<cr>
