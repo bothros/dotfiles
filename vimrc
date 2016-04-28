@@ -13,9 +13,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins go here:
-NeoBundle 'vim-voom/VOoM'
+" NeoBundle 'vim-voom/VOoM'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'bothros/vim-solitaire'
+" NeoBundle 'bothros/vim-solitaire'
 " NeoBundle '/home/adams/vim-TODO/.git'
 NeoBundle 'bothros/vim-TODO'
 NeoBundle 'tpope/vim-commentary'
@@ -37,7 +37,7 @@ NeoBundle 'tpope/vim-unimpaired' " Syntastic uses :lnext and :lprev all the time
                               " ]l and [l in unimpaired
 NeoBundle 'vim-pandoc/vim-pandoc'
 NeoBundle 'vim-pandoc/vim-pandoc-syntax'
-NeoBundle 'jiangmiao/auto-pairs'
+" NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'hynek/vim-python-pep8-indent'
 " NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tmhedberg/SimpylFold'
@@ -104,8 +104,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Run pandoc on write, for pandoc-markdown
-let g:pandoc#command#autoexec_on_writes = 1
-let g:pandoc#command#autoexec_command = "Pandoc"
+" let g:pandoc#command#autoexec_on_writes = 0
+" let g:pandoc#command#autoexec_command = "Pandoc"
 
 " Add // as a json comment prefix
 autocmd FileType json set commentstring=//\ %s
@@ -123,9 +123,9 @@ nnoremap <C-J> i<CR><Esc>k$
 
 " Open Voom automatically when upon opening a markdown file.
 " TOFIX: need to press enter twice for voom to work right. Not sure why.
-if ! &diff
-    autocmd FileType pandoc :Voom pandoc
-endif
+" if ! &diff
+    " autocmd FileType pandoc :Voom pandoc
+" endif
 
 " Unite.vim stuff
 function! Unite_ctrlp()
